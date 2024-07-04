@@ -7,34 +7,25 @@ This project is an adaptation designed to work with the Adafruit library for the
 
 
 Features
-
 Peer-to-Peer Communication: Send and receive text messages between two ESP32 devices.
-
 TFT Display: Utilize a generic ST7735 TFT display to show messages and interface.
-
 ESP-NOW Protocol: Wireless communication without the need for a Wi-Fi network.
-
 Vibration Notification: Added motor to buzz when a new message is received. (issue)
 
 
 Hardware Requirements
-
 ESP32 x2
-
 ST7735 TFT Display x2
-
 Buttons (Next, Select, Return, Option) x2 sets
-
 Motor for vibration
-
 Additional LEDs for TX and RX indicators
+
 
 
 Wiring Diagram
 
 
 ESP32 Connections
-
 TFT Pin	ESP32 Pin
 
 TFT_CS	5
