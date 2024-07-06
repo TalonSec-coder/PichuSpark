@@ -1,128 +1,78 @@
-PichuSpark
+# PichuSpark
 
-Overview
+## Overview
 
-PichuSpark is an ESP32 peer-to-peer text messaging system that uses a generic ST7735 TFT display and ESP-NOW for communication. 
-This project is an adaptation designed to work with the Adafruit library for the ST7735 TFT displays.
+PichuSpark is an ESP32 peer-to-peer text messaging system that uses a generic ST7735 TFT display and ESP-NOW for communication. This project is an adaptation designed to work with the Adafruit library for the ST7735 TFT displays.
 
+## Features
+- **Peer-to-Peer Communication:** Send and receive text messages between two ESP32 devices.
+- **TFT Display:** Utilize a generic ST7735 TFT display to show messages and interface.
+- **ESP-NOW Protocol:** Wireless communication without the need for a Wi-Fi network.
+- **Vibration Notification:** Added motor to buzz when a new message is received. (issue)
 
-Features
-Peer-to-Peer Communication: Send and receive text messages between two ESP32 devices.
-TFT Display: Utilize a generic ST7735 TFT display to show messages and interface.
-ESP-NOW Protocol: Wireless communication without the need for a Wi-Fi network.
-Vibration Notification: Added motor to buzz when a new message is received. (issue)
+## Hardware Requirements
+- ESP32 x2
+- ST7735 TFT Display x2
+- Buttons (Next, Select, Return, Option) x2 sets
+- Motor for vibration
+- Additional LEDs for TX and RX indicators
 
+## Wiring Diagram
 
-Hardware Requirements
-ESP32 x2
-ST7735 TFT Display x2
-Buttons (Next, Select, Return, Option) x2 sets
-Motor for vibration
-Additional LEDs for TX and RX indicators
+### ESP32 Connections
+| TFT Pin  | ESP32 Pin |
+|----------|-----------|
+| TFT_CS   | 5         |
+| TFT_RST  | 4         |
+| TFT_DC   | 2         |
+| TFT_MOSI | 23        |
+| TFT_SCLK | 18        |
+| TFT_MISO | 19        |
 
+### Button Connections
+| Button        | ESP32 Pin |
+|---------------|-----------|
+| BUTTON_NEXT   | 32        |
+| BUTTON_SELECT | 33        |
+| BUTTON_RETURN | 25        |
+| BUTTON_OPTION | 26        |
 
+### LED Connections
+| LED    | ESP32 Pin |
+|--------|-----------|
+| LED_TX | 27        |
+| LED_RX | 14        |
 
-Wiring Diagram
+### Motor Connections
+| Motor  | ESP32 Pin |
+|--------|-----------|
+| Motor  | 13        |
 
+## Installation
 
-ESP32 Connections
-TFT Pin	ESP32 Pin
-
-TFT_CS	5
-
-TFT_RST	4
-
-TFT_DC	2
-
-TFT_MOSI	23
-
-TFT_SCLK	18
-
-TFT_MISO	19
-
-
-Button	ESP32 Pin
-
-BUTTON_NEXT	32
-
-BUTTON_SELECT	33
-
-BUTTON_RETURN	25
-
-BUTTON_OPTION	26
-
-
-LED	ESP32 Pin
-
-LED_TX	27
-
-LED_RX	14
-
-
-Motor	ESP32 Pin
-
-Motor	13
-
-
-Installation
-
-Clone the Repository
-
-sh
-
-Copy code
-
+### Clone the Repository
+```sh
 git clone https://github.com/TalonSec-coder/PichuSpark.git
-
 cd PichuSpark
-
 Install Required Libraries
-
-
 Adafruit GFX Library
-
 Adafruit ST7735 and ST7789 Library
-
 Upload the Code
-
-
 Open the project in the Arduino IDE.
-
 Select the appropriate ESP32 board from Tools > Board.
-
 Upload the code to both ESP32 devices.
-
 Usage
-
 Power Up the Devices
-
-
 Connect and power up both ESP32 devices.
 
-
 Sending Messages
-
 Use the buttons to navigate and type messages.
-
 Press the option button to send the message.
-
 The motor will buzz on the receiving device when a new message is received.
-
-
 Original Credits
-
-VolosR/Messenger / https://github.com/VolosR/Messenger/tree/main
-
+VolosR/Messenger
 M5Stack AtomS3 Dev Kit
-
-
-
-
 ESP32 SMS Encrypted Messenger!!!
-
-
-This project demonstrates a simple peer-to-peer text messaging system using ESP-NOW on the ESP32 with an ST7735 TFT display. It includes a basic XOR encryption for message security. The system allows users to send and receive encrypted text messages.
-
 Encryption Overview
 The project uses a simple XOR cipher for encryption. While XOR encryption is easy to implement and can obscure data to some extent, it is not secure against more sophisticated attacks. XOR encryption can be broken easily if the key or part of the key is known or guessed.
 
@@ -140,50 +90,7 @@ How to Use
 Setup: Connect the ESP32 to the TFT display and buttons as per the pin configuration.
 Upload Code: Use the Arduino IDE to upload the code to your ESP32.
 Send and Receive Messages: Use the buttons to compose and send messages. Received messages will be displayed on the screen.
-Pin Configuration
-
-
-TFT Pins:
-
-TFT_CS: GPIO 5
-
-TFT_RST: GPIO 4
-
-TFT_DC: GPIO 2
-
-TFT_MOSI: GPIO 23
-
-TFT_SCLK: GPIO 18
-
-TFT_MISO: GPIO 19
-
-
-Button Pins:
-
-BUTTON_SCROLL_RIGHT: GPIO 32
-
-BUTTON_SCROLL_DOWN: GPIO 33
-
-BUTTON_SELECT_CHAR: GPIO 25
-
-BUTTON_SEND: GPIO 26
-
-
-LED Pins:
-
-LED_TX: GPIO 27
-
-LED_RX: GPIO 14
-
-
 Future Enhancements
-
 Improve Encryption: Upgrade the encryption method to AES or ChaCha20 for better security.
-
-
-
-
 License
-
 This project is licensed under the MIT License - see the LICENSE file for details.
-
