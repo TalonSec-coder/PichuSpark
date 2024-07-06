@@ -118,6 +118,71 @@ M5Stack AtomS3 Dev Kit
 
 
 
+ESP32 SMS Encrypted Messenger!!!
+
+
+This project demonstrates a simple peer-to-peer text messaging system using ESP-NOW on the ESP32 with an ST7735 TFT display. It includes a basic XOR encryption for message security. The system allows users to send and receive encrypted text messages.
+
+Encryption Overview
+The project uses a simple XOR cipher for encryption. While XOR encryption is easy to implement and can obscure data to some extent, it is not secure against more sophisticated attacks. XOR encryption can be broken easily if the key or part of the key is known or guessed.
+
+For a more secure encryption solution, consider using an established cryptographic library that provides stronger algorithms. Here are a few suggestions:
+
+AES (Advanced Encryption Standard): A widely used encryption standard that is secure and efficient. The ESP32 has hardware support for AES encryption.
+ChaCha20: A stream cipher designed to be fast and secure, particularly suitable for embedded systems.
+ESP32 Arduino Crypto Library: This library provides various cryptographic functions, including AES, RSA, SHA, and more.
+Features
+Encrypted Messaging: Messages are encrypted using a basic XOR cipher before transmission.
+ESP-NOW Communication: Utilizes ESP-NOW for efficient peer-to-peer communication.
+User Interface: The display shows messages, typing area, and a virtual keyboard for message composition.
+Visual Indicators: LEDs indicate message transmission and reception.
+How to Use
+Setup: Connect the ESP32 to the TFT display and buttons as per the pin configuration.
+Upload Code: Use the Arduino IDE to upload the code to your ESP32.
+Send and Receive Messages: Use the buttons to compose and send messages. Received messages will be displayed on the screen.
+Pin Configuration
+
+
+TFT Pins:
+
+TFT_CS: GPIO 5
+
+TFT_RST: GPIO 4
+
+TFT_DC: GPIO 2
+
+TFT_MOSI: GPIO 23
+
+TFT_SCLK: GPIO 18
+
+TFT_MISO: GPIO 19
+
+
+Button Pins:
+
+BUTTON_SCROLL_RIGHT: GPIO 32
+
+BUTTON_SCROLL_DOWN: GPIO 33
+
+BUTTON_SELECT_CHAR: GPIO 25
+
+BUTTON_SEND: GPIO 26
+
+
+LED Pins:
+
+LED_TX: GPIO 27
+
+LED_RX: GPIO 14
+
+
+Future Enhancements
+
+Improve Encryption: Upgrade the encryption method to AES or ChaCha20 for better security.
+
+
+
+
 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
