@@ -73,7 +73,10 @@ The motor will buzz on the receiving device when a new message is received.
 
 Original Credits
 
-VolosR/Messenger / https://github.com/VolosR/Messenger/tree/main
+VolosR/Messenger /
+
+https://github.com/VolosR/Messenger/tree/main
+
 M5Stack AtomS3 Dev Kit
 
 
@@ -96,6 +99,7 @@ Encrypted Messaging: Messages are encrypted using a basic XOR cipher before tran
 ESP-NOW Communication: Utilizes ESP-NOW for efficient peer-to-peer communication.
 User Interface: The display shows messages, typing area, and a virtual keyboard for message composition.
 Visual Indicators: LEDs indicate message transmission and reception.
+
 How to Use
 Setup: Connect the ESP32 to the TFT display and buttons as per the pin configuration.
 Upload Code: Use the Arduino IDE to upload the code to your ESP32.
